@@ -10,5 +10,9 @@ namespace Entities
         public string Сontent { get; set; }
         public virtual Board Board { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public Post()
+        {
+
+        }
     }
 }
