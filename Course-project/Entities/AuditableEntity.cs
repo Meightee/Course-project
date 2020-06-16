@@ -12,4 +12,3 @@ namespace Course_project.Entities
         public DateTime? ModifiedAt { get; set; }
     }
 }
-
