@@ -18,9 +18,25 @@ namespace DbConsole
 
     class Program
     {
+        private static readonly AppDbContext _appContext;
+        // private static IBookRepository _bookRepository;
+        //private static IAuthorRepository _authorRepository;
+        static Program()
+        {
+            AppDbContextFactory factory = new AppDbContextFactory();
+            _appContext = factory.CreateDbContext(null);
+            // _authorRepository = new AuthorRepository(_appContext);
+            //_bookRepository = new BookRepository(_appContext);
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Start!");
+
+            //Author author = new Author("Александр", "Пушкин", "Сергеевич");
+            //authorRepository.Add(author);
+            //Book book = new Book(author.Id, "Сборник стихов", "Сборник стихов", 250);
+            //_bookRepository.Add(book);
         }
     }
 }
