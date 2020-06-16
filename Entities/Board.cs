@@ -6,8 +6,7 @@ namespace Entities
 {
     public class Board : AuditableEntity
     {
-        public string BoardUrl { get; set; }
         public string BoardName { get; set; }
-
+        public ICollection<Post> Posts { get; set; }
     }
 }

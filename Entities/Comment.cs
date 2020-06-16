@@ -6,7 +6,7 @@ namespace Entities
 {
     public class Comment : AuditableEntity
     {
-        public string CommenUrl { get; set; }
         public string Text { get; set; }
+        public Post Post { get; set; }
     }
 }
