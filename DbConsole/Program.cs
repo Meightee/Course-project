@@ -19,14 +19,16 @@ namespace DbConsole
     class Program
     {
         private static readonly AppDbContext _appContext;
-        // private static IBookRepository _bookRepository;
-        //private static IAuthorRepository _authorRepository;
+        private static IBoardRepository _boardRepository;
+        private static IPostRepository _postRepository;
+        private static ICommentRepository _commentRepository;
         static Program()
         {
             AppDbContextFactory factory = new AppDbContextFactory();
             _appContext = factory.CreateDbContext(null);
-            // _authorRepository = new AuthorRepository(_appContext);
-            //_bookRepository = new BookRepository(_appContext);
+            _boardRepository = new BoardRepository(_appContext);
+            _postRepository = new PostRepository(_appContext);
+            _commentRepository = new CommentRepository(_appContext);
         }
 
         static void Main(string[] args)
