@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entities
 {
-    class Board : AuditableEntity
+    public class Board : AuditableEntity
     {
         public string BoardUrl { get; set; }
         public string BoardName { get; set; }
