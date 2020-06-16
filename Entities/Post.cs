@@ -8,7 +8,7 @@ namespace Entities
     {
         public string Header { get; set; }
         public string Сontent { get; set; }
-        public Board Board { get; set; }
-        public ICollection<Comment> Comments { get; set; }
+        public virtual Board Board { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
