@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Course_project.Entities
+namespace Entities
 {
     class Comment : AuditableEntity
     {
