@@ -8,6 +8,10 @@ namespace Entities
     {
         public string BoardName { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
+        public Board(string name)
+        {
+            BoardName = name;
+        }
         public Board()
         {
 

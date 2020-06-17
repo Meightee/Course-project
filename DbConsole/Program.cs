@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using Entities;
+using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
@@ -11,11 +12,11 @@ namespace DbConsole
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Forrrum;Trusted_Connection=True;", b => b.MigrationsAssembly("Infrastructure"));
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=Forrrum;Trusted_Connection=True;",
+                b => b.MigrationsAssembly("Infrastructure"));
             return new AppDbContext(optionsBuilder.Options);
         }
     }
-
     class Program
     {
         private static readonly AppDbContext _appContext;
@@ -35,10 +36,12 @@ namespace DbConsole
         {
             Console.WriteLine("Start!");
 
-            //Author author = new Author("Александр", "Пушкин", "Сергеевич");
-            //authorRepository.Add(author);
-            //Book book = new Book(author.Id, "Сборник стихов", "Сборник стихов", 250);
-            //_bookRepository.Add(book);
+            Board board = new Board("Хватит ");
+            _boardRepository.Add(board);
+            Post post = new Post("хватит", "хватит");
+            _postRepository.Add(post);
+            Comment comment = new Comment("хватит");
+            _commentRepository.Add(comment);
         }
     }
 }
