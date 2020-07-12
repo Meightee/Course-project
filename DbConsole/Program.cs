@@ -38,9 +38,9 @@ namespace DbConsole
 
             Board board = new Board("Хватит ");
             _boardRepository.Add(board);
-            Post post = new Post("хватит", "хватит");
+            Post post = new Post(board.Id, "хватит", "хватит");
             _postRepository.Add(post);
-            Comment comment = new Comment("хватит");
+            Comment comment = new Comment(post.Id, "хватит");
             _commentRepository.Add(comment);
         }
     }

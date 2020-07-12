@@ -1,18 +1,22 @@
-﻿using Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using Entities;
 
 namespace Infrastructure
 {
     public class CommentRepository : AuditableRepository<Comment>, ICommentRepository
     {
+        private readonly AppDbContext _dbContext;
         public CommentRepository(AppDbContext dbContext) : base(dbContext)
         {
+            _dbContext = dbContext;
         }
-        public Comment Get(int id)
+        public override Comment Get(int id)
         {
-            return DbContext.Find<Comment>(id);
+            return _dbContext.Comments.Include(b => b.Post).FirstOrDefault(b => b.Id == id);
         }
         public void Remove(Comment entity)
         {

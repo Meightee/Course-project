@@ -8,10 +8,12 @@ namespace Entities
     {
         public string Header { get; set; }
         public string Content { get; set; }
+        public int BoardId { get; set; }
         public virtual Board Board { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public Post(string header, string content)
+        public Post(int boardId, string header, string content)
         {
+            BoardId = boardId;
             Header = header;
             Content = content;
         }
