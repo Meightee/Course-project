@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200616173457_init")]
+    [Migration("20200713115150_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,7 +55,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PostId")
+                    b.Property<int>("PostId")
                         .HasColumnType("int");
 
                     b.Property<string>("Text")
@@ -75,8 +75,11 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BoardId")
+                    b.Property<int>("BoardId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -86,9 +89,6 @@ namespace Infrastructure.Data.Migrations
 
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Сontent")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -101,14 +101,18 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.HasOne("Entities.Post", "Post")
                         .WithMany("Comments")
-                        .HasForeignKey("PostId");
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Entities.Post", b =>
                 {
                     b.HasOne("Entities.Board", "Board")
                         .WithMany("Posts")
-                        .HasForeignKey("BoardId");
+                        .HasForeignKey("BoardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

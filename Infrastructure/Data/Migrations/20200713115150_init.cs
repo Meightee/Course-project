@@ -31,8 +31,8 @@ namespace Infrastructure.Data.Migrations
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
                     Header = table.Column<string>(nullable: true),
-                    Сontent = table.Column<string>(nullable: true),
-                    BoardId = table.Column<int>(nullable: true)
+                    Content = table.Column<string>(nullable: true),
+                    BoardId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace Infrastructure.Data.Migrations
                         column: x => x.BoardId,
                         principalTable: "Boards",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,7 +54,7 @@ namespace Infrastructure.Data.Migrations
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     ModifiedAt = table.Column<DateTime>(nullable: true),
                     Text = table.Column<string>(nullable: true),
-                    PostId = table.Column<int>(nullable: true)
+                    PostId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,7 +64,7 @@ namespace Infrastructure.Data.Migrations
                         column: x => x.PostId,
                         principalTable: "Posts",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
