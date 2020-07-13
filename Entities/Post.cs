@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace Entities
 {
@@ -10,6 +10,7 @@ namespace Entities
         public string Content { get; set; }
         public int BoardId { get; set; }
         public virtual Board Board { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Comment> Comments { get; set; }
         public Post(int boardId, string header, string content)
         {

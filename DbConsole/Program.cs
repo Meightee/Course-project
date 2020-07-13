@@ -31,7 +31,6 @@ namespace DbConsole
             _postRepository = new PostRepository(_appContext);
             _commentRepository = new CommentRepository(_appContext);
         }
-
         static void Main(string[] args)
         {
             Console.WriteLine("Start!");

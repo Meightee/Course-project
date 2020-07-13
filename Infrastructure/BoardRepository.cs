@@ -7,8 +7,10 @@ namespace Infrastructure
 {
     public class BoardRepository : AuditableRepository<Board>, IBoardRepository
     {
+        private readonly AppDbContext _dbContext;
         public BoardRepository(AppDbContext dbContext) : base(dbContext)
         {
+             _dbContext = dbContext;
         }
         public Board Get(int id)
         {
