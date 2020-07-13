@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{2027AC96-833A-47B0-9C25-656FC1CBC92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConsole", "DbConsole\DbConsole.csproj", "{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole", "DbConsole\DbConsole.csproj", "{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
