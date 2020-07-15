@@ -18,9 +18,5 @@ namespace Infrastructure
         {
             return _dbContext.Comments.Include(b => b.Post).FirstOrDefault(b => b.Id == id);
         }
-        public void Remove(Comment entity)
-        {
-            DbContext.Remove(entity);
-        }
     }
 }

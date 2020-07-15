@@ -18,9 +18,9 @@ namespace Infrastructure
         {
             return _dbContext.Posts.Include(b => b.Board).FirstOrDefault(b => b.Id == id);
         }
-        public void Remove(Post entity)
+        public IReadOnlyList<Post> GetAll()
         {
-            DbContext.Remove(entity);
+            return _dbContext.Posts.Include(b => b.Board).ToList();
         }
     }
 }

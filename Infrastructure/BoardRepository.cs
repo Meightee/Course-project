@@ -1,7 +1,9 @@
-﻿using Entities;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using Entities;
 
 namespace Infrastructure
 {
@@ -10,15 +12,7 @@ namespace Infrastructure
         private readonly AppDbContext _dbContext;
         public BoardRepository(AppDbContext dbContext) : base(dbContext)
         {
-             _dbContext = dbContext;
-        }
-        public Board Get(int id)
-        {
-            return DbContext.Find<Board>(id);
-        }
-        public void Remove(Board entity)
-        {
-            DbContext.Remove(entity);
+            _dbContext = dbContext;
         }
     }
 }

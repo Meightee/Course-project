@@ -8,5 +8,6 @@ namespace Infrastructure
 {
     public interface IPostRepository : ICanAdd<Post>, ICanDelete<Post>, ICanGet<Post>, ICanUpdate<Post>
     {
+        IReadOnlyList<Post> GetAll();
     }
 }

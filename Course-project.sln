@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course-project", "Course-project\Course-project.csproj", "{D2B99C70-761A-43ED-B486-B4DC51255322}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{9513D04B-2DED-4F22-9AB2-468C6BC16E91}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{2027AC96-833A-47B0-9C25-656FC1CBC92A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole", "DbConsole\DbConsole.csproj", "{F772AB55-FBEB-49E4-9D2E-1B89F28A35DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{C6F2038D-AEB5-472E-B0C2-F9B8E2129116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2B99C70-761A-43ED-B486-B4DC51255322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2B99C70-761A-43ED-B486-B4DC51255322}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2B99C70-761A-43ED-B486-B4DC51255322}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2B99C70-761A-43ED-B486-B4DC51255322}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9513D04B-2DED-4F22-9AB2-468C6BC16E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9513D04B-2DED-4F22-9AB2-468C6BC16E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9513D04B-2DED-4F22-9AB2-468C6BC16E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
