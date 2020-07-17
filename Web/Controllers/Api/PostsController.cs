@@ -37,21 +37,5 @@ namespace Web.Controllers
             _postRepository.Add(post);
             return Ok();
         }
-
-
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Post post)
-        {
-            _postRepository.Update(post);
-            return Ok();
-        }
-
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id, [FromBody] Post post)
-        {
-            _postRepository.Remove(post);
-            return Ok();
-        }
-
     }
 }

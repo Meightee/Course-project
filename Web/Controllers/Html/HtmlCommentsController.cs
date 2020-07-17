@@ -10,25 +10,25 @@ using Infrastructure;
 namespace Web.Controllers
 {
     [Route("html/[controller]")]
-    public class HtmlPostsController : Controller
+    public class HtmlCommentsController : Controller
     {
-        private IPostRepository _postRepository { get; set; }
+        private ICommentRepository _commentRepository { get; set; }
 
-        public HtmlPostsController(IPostRepository postRepository)
+        public HtmlCommentsController(ICommentRepository commentRepository)
         {
-            _postRepository = postRepository;
+            _commentRepository = commentRepository;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            return View(_postRepository.GetAll());
+            return View(_commentRepository.GetAll());
         }
 
         [HttpGet("{id}")]
         public ActionResult Details(int id)
         {
-            return View(_postRepository.Get(id));
+            return View(_commentRepository.Get(id));
         }
 
 
@@ -40,11 +40,11 @@ namespace Web.Controllers
 
         [HttpPost("create")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] Post post)
+        public ActionResult Create([FromForm] Comment comment)
         {
             try
             {
-                _postRepository.Add(post);
+                _commentRepository.Add(comment);
 
                 return RedirectToAction(nameof(Index));
             }

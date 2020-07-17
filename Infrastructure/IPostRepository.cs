@@ -6,7 +6,7 @@ using Infrastructure.CRUDInterfaces;
 
 namespace Infrastructure
 {
-    public interface IPostRepository : ICanAdd<Post>, ICanDelete<Post>, ICanGet<Post>, ICanUpdate<Post>
+    public interface IPostRepository : ICanAdd<Post>, ICanGet<Post>
     {
         IReadOnlyList<Post> GetAll();
     }

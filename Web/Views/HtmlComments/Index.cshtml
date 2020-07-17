@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Entities.Post>
+﻿@model IEnumerable<Entities.Comment>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Header)
+                @Html.DisplayNameFor(model => model.Text)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BoardId)
+                @Html.DisplayNameFor(model => model.PostId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -32,15 +29,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Header)
+                    @Html.DisplayFor(modelItem => item.Text)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoardId)
-                </td>
-                <td>
+                    @Html.DisplayFor(modelItem => item.PostId)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Id)

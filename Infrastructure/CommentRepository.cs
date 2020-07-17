@@ -18,5 +18,9 @@ namespace Infrastructure
         {
             return _dbContext.Comments.Include(b => b.Post).FirstOrDefault(b => b.Id == id);
         }
+        public IReadOnlyList<Comment> GetAll()
+        {
+            return _dbContext.Comments.Include(b => b.Post).ToList();
+        }
     }
 }

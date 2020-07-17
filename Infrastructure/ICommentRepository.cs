@@ -6,7 +6,8 @@ using Infrastructure.CRUDInterfaces;
 
 namespace Infrastructure
 {
-    public interface ICommentRepository : ICanAdd<Comment>, ICanDelete<Comment>, ICanGet<Comment>
+    public interface ICommentRepository : ICanAdd<Comment>, ICanGet<Comment>
     {
+        IReadOnlyList<Comment> GetAll();
     }
 }
