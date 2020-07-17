@@ -14,5 +14,9 @@ namespace Infrastructure
         {
             _dbContext = dbContext;
         }
+        public IReadOnlyList<Board> GetAll()
+        {
+            return _dbContext.Boards.ToList();
+        }
     }
 }

@@ -27,7 +27,9 @@ namespace Web
         {
             services.AddControllers().AddNewtonsoftJson();
             services.AddControllersWithViews();
+            services.AddScoped<IBoardRepository, BoardRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
         }

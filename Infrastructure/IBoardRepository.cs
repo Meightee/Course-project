@@ -8,5 +8,6 @@ namespace Infrastructure
 {
     public interface IBoardRepository : ICanAdd<Board>, ICanDelete<Board>, ICanGet<Board>, ICanUpdate<Board>
     {
+        IReadOnlyList<Board> GetAll();
     }
 }
