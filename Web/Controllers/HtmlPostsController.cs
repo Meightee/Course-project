@@ -25,12 +25,12 @@ namespace Web.Controllers
             return View(_postRepository.GetAll());
         }
 
-
         [HttpGet("{id}")]
         public ActionResult Details(int id)
         {
             return View(_postRepository.Get(id));
         }
+
 
         [HttpGet("create")]
         public ActionResult Create()
@@ -50,29 +50,30 @@ namespace Web.Controllers
             }
             catch
             {
-                return View();
+                return new BadRequestResult();
             }
         }
 
-        [HttpGet("update/{id}")]
+        [HttpGet("edit/{id}")]
         public ActionResult Edit(int id)
         {
             return View(_postRepository.Get(id));
         }
 
-        [HttpPost("update/{id}")]
+        [HttpPost("edit/{id}")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, [FromForm] Post post)
         {
             try
             {
+                post.Id = id;
                 _postRepository.Update(post);
 
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return new BadRequestResult();
             }
         }
     }
