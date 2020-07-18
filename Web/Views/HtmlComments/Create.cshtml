@@ -1,31 +1,36 @@
 ﻿@model Entities.Comment
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Создание";
 }
 
-<h1>Create</h1>
+<h1>Создание</h1>
 
-<h4>Comment</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+            </>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Text" class="control-label"></label>
+                <label>Комментарий:</label>
                 <input asp-for="Text" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label>Id gjcnf:</label>
+                <input asp-for="PostId" class="form-control" />
+                <span asp-validation-for="PostId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="HtmlBoards" asp-action="Index">Назад к списку досок</a>
 </div>
 
 @section Scripts {

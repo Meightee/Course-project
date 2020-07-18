@@ -1,22 +1,22 @@
 ﻿@model IEnumerable<Entities.Board>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Все доски";
 }
 
-<h1>Index</h1>
+<h1>Все доски</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новую доску</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BoardName)
+                Название
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                id
             </th>
             <th></th>
         </tr>
@@ -29,10 +29,11 @@
                     @Html.DisplayFor(modelItem => item.BoardName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    / @Html.DisplayFor(modelItem => item.Id) /
                 </td>
                 <td>
-                    @Html.ActionLink("Details", "Details", new { item.Id }) |
+                    <a asp-controller="HtmlPosts" asp-route-id="@item.Id" asp-action="Index">Перейти</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Доп. информация</a>
                 </td>
             </tr>
         }

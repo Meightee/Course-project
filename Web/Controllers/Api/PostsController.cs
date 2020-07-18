@@ -17,17 +17,10 @@ namespace Web.Controllers
             _postRepository = postRepository;
         }
 
-        [HttpGet]
+        [HttpGet("{boardId}")]
         public IEnumerable<Post> Get()
         {
             return _postRepository.GetAll();
-        }
-
-
-        [HttpGet("{id}")]
-        public Post Get(int id)
-        {
-            return _postRepository.Get(id);
         }
 
 

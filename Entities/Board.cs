@@ -6,7 +6,6 @@ namespace Entities
     public class Board : AuditableEntity
     {
         public string BoardName { get; set; }
-        [JsonIgnore]
         public virtual ICollection<Post> Posts { get; set; }
         public Board(string name)
         {

@@ -1,28 +1,25 @@
 ﻿@model IEnumerable<Entities.Post>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Все посты";
 }
 
-<h1>Index</h1>
+<h1>Все посты</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новый пост</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Header)
+                Заголовок
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Content)
+                Сообщение
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BoardId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th></th>
         </tr>
@@ -35,20 +32,19 @@
                     @Html.DisplayFor(modelItem => item.Header)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoardId)
-                </td>
-                <td>
+                    / @Html.DisplayFor(modelItem => item.Content) /
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
-                    @Html.ActionLink("Details", "Details", new { item.Id }) |
+                    <a asp-controller="HtmlComments" asp-route-id="@item.Id" asp-action="Index">Перейти</a>
+                    @Html.ActionLink("Доп. информация", "Details", new { item.Id }) |
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<div>
+    <a asp-controller="HtmlBoards" asp-action="Index">Назад к списку досок</a>
+</div>

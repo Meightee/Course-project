@@ -20,9 +20,9 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(_commentRepository.GetAll());
+            return View(_commentRepository.GetAll().Where(p=>p.PostId == id));
         }
 
         [HttpGet("{id}")]

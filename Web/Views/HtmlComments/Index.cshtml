@@ -1,25 +1,22 @@
 ﻿@model IEnumerable<Entities.Comment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Комментарии";
 }
 
-<h1>Index</h1>
+<h1>Комментарии</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новый комментарий</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Text)
+                Комментарий
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PostId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th></th>
         </tr>
@@ -32,15 +29,15 @@
                     @Html.DisplayFor(modelItem => item.Text)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PostId)
+                    / @Html.DisplayFor(modelItem => item.Id)/
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "Details", new { item.Id }) |
+                    @Html.ActionLink("Доп. информация", "Details", new { item.Id }) |
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<div>
+    <a asp-controller="HtmlBoards" asp-action="Index">Назад к списку досок</a>
+</div>

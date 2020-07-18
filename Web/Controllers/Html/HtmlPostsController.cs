@@ -19,10 +19,11 @@ namespace Web.Controllers
             _postRepository = postRepository;
         }
 
-        [HttpGet]
-        public ActionResult Index()
+        [HttpGet()]
+        public ActionResult Index(int id)
         {
-            return View(_postRepository.GetAll());
+            return View(_postRepository.GetAll().Where(p=>p.BoardId == id ));
+
         }
 
         [HttpGet("{id}")]
@@ -33,7 +34,7 @@ namespace Web.Controllers
 
 
         [HttpGet("create")]
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             return View();
         }

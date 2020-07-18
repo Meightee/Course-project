@@ -1,41 +1,28 @@
 ﻿@model Entities.Comment
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Доп.информация";
 }
 
-<h1>Details</h1>
+    <h1>Дополнительная информация</h1>
 
 <div>
-    <h4>Comment</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.PostId)
+            <label>Id поста:</label>
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PostId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
+            <label>Дата создания:</label>
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedAt)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ModifiedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ModifiedAt)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
+            <label>Id комментария:</label>
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Id)
@@ -43,5 +30,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="HtmlBoards" asp-action="Index">Назад к списку досок</a>
 </div>
